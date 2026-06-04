@@ -459,9 +459,9 @@ void HexTile::knobs(Knob_Callback f)
         "0.0 = no rotation (good for directional patterns like bricks). "
         "1.0 = full random rotation (good for organic textures).");
 
-    Float_knob(f, &_contrast, IRange(0.01, 0.99), "contrast", "contrast");
+    Float_knob(f, &_contrast, IRange(0.01, 0.99), "tile_blend", "tile blend");
     Tooltip(f,
-        "Contrast restoration via an S-curve on the blending weights. "
+        "Controls how the three hex tile samples are blended together. "
         "0.50 = no adjustment (blending may look blurry). "
         "0.75 = recommended (restores crispness). "
         "0.99 = maximum contrast (may reveal the hex grid).");

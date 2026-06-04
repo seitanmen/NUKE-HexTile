@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+project(HexTile LANGUAGES CXX)
+
+# Allow cmake/ to be found for NukeConfig.cmake
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# Locate Nuke NDK (sets Nuke::NDK target and add_nuke_plugin helper)
+find_package(Nuke REQUIRED)
+
+# Build the plugin
+add_nuke_plugin(HexTile HexTile.cpp)
+
+# --- optional: copy to ~/.nuke after build (Windows) ---
+if(WIN32)
+    add_custom_command(TARGET HexTile POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "$<TARGET_FILE:HexTile>"
+            "$ENV{USERPROFILE}/.nuke/HexTile.dll"
+        COMMENT "Copying HexTile.dll to ~/.nuke/"
+    )
+endif()

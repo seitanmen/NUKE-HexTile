@@ -1,0 +1,10 @@
+^C:\USERS\VMTADMIN\DOWNLOADS\WORK\HEX_TILE\BUILD\CMAKEFILES\FF90EDF934DF56F9D808CC0E92C95E9D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/USERNAME/Downloads/work/hex_tile -BC:/Users/USERNAME/Downloads/work/hex_tile/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/USERNAME/Downloads/work/hex_tile/build/HexTile.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

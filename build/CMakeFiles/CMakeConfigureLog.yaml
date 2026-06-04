@@ -1,0 +1,2978 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild 縺ｮ繝舌・繧ｸ繝ｧ繝ｳ 17.14.19+164abd434 (.NET Framework)
+      2026/06/03 23:36:18 縺ｫ繝薙Ν繝峨ｒ髢句ｧ九＠縺ｾ縺励◆縲・
+      
+      繝弱・繝・1 荳翫・繝励Ο繧ｸ繧ｧ繧ｯ繝・"C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\4.3.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (譌｢螳壹・繧ｿ繝ｼ繧ｲ繝・ヨ)縲・
+      PrepareForBuild:
+        繝・ぅ繝ｬ繧ｯ繝医Μ "Debug\\" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+        讒矩\xc2\x80蛹門・蜉帙′譛牙柑縺ｫ縺ｪ縺｣縺ｦ縺・∪縺吶\xc2\x80ゅさ繝ｳ繝代う繝ｩ險ｺ譁ｭ縺ｮ譖ｸ蠑剰ｨｭ螳壹↓縺ｯ繧ｨ繝ｩ繝ｼ髫主ｱ､縺悟渚譏縺輔ｌ縺ｾ縺吶\xc2\x80りｩｳ邏ｰ縺ｫ縺､縺・※縺ｯ縲”ttps://aka.ms/cpp/structured-output 繧貞盾辣ｧ縺励※縺上□縺輔＞縲・
+        繝・ぅ繝ｬ繧ｯ繝医Μ "Debug\\CompilerIdCXX.tlog\\" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+      InitializeBuildStatus:
+        "AlwaysCreate" 縺梧欠螳壹＆繧後◆縺溘ａ "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+        "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" 縺ｮ繧ｿ繝・メ 繧ｿ繧ｹ繧ｯ繧貞ｮ溯｡後＠縺ｦ縺・∪縺吶\xc2\x80・
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\4.3.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        繝輔ぃ繧､繝ｫ "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" 繧貞炎髯､縺励※縺・∪縺吶\xc2\x80・
+        "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate" 縺ｮ繧ｿ繝・メ 繧ｿ繧ｹ繧ｯ繧貞ｮ溯｡後＠縺ｦ縺・∪縺吶\xc2\x80・
+      繝励Ο繧ｸ繧ｧ繧ｯ繝・"C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\4.3.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (譌｢螳壹・繧ｿ繝ｼ繧ｲ繝・ヨ) 縺ｮ繝薙Ν繝峨′螳御ｺ・＠縺ｾ縺励◆縲・
+      
+      繝薙Ν繝峨↓謌仙粥縺励∪縺励◆縲・
+          0 蛟九・隴ｦ蜻・
+          0 繧ｨ繝ｩ繝ｼ
+      
+      邨碁℃譎る俣 00:00:00.70
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lld-link"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lld-link.com"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lld-link.exe"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/lld-link.com"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/lld-link.exe"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/nvm/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/nvm/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/nvm/lld-link"
+      - "C:/nvm4w/nodejs/lld-link.com"
+      - "C:/nvm4w/nodejs/lld-link.exe"
+      - "C:/nvm4w/nodejs/lld-link"
+      - "C:/Program Files/Perforce/lld-link.com"
+      - "C:/Program Files/Perforce/lld-link.exe"
+      - "C:/Program Files/Perforce/lld-link"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/Go/bin/lld-link.com"
+      - "C:/Program Files/Go/bin/lld-link.exe"
+      - "C:/Program Files/Go/bin/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Users/USERNAME/.cargo/bin/lld-link.com"
+      - "C:/Users/USERNAME/.cargo/bin/lld-link.exe"
+      - "C:/Users/USERNAME/.cargo/bin/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/USERNAME/.dotnet/tools/lld-link.com"
+      - "C:/Users/USERNAME/.dotnet/tools/lld-link.exe"
+      - "C:/Users/USERNAME/.dotnet/tools/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/lld-link"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lld-link.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lld-link.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lld-link"
+      - "C:/Users/USERNAME/go/bin/lld-link.com"
+      - "C:/Users/USERNAME/go/bin/lld-link.exe"
+      - "C:/Users/USERNAME/go/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/mt.com"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/mt"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/mt.com"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/mt.exe"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/mt"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/mt.com"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/mt.exe"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/mt"
+      - "C:/Users/USERNAME/AppData/Local/nvm/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/nvm/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/nvm/mt"
+      - "C:/nvm4w/nodejs/mt.com"
+      - "C:/nvm4w/nodejs/mt.exe"
+      - "C:/nvm4w/nodejs/mt"
+      - "C:/Program Files/Perforce/mt.com"
+      - "C:/Program Files/Perforce/mt.exe"
+      - "C:/Program Files/Perforce/mt"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Program Files/Go/bin/mt.com"
+      - "C:/Program Files/Go/bin/mt.exe"
+      - "C:/Program Files/Go/bin/mt"
+      - "C:/Program Files/CMake/bin/mt.com"
+      - "C:/Program Files/CMake/bin/mt.exe"
+      - "C:/Program Files/CMake/bin/mt"
+      - "C:/Users/USERNAME/.cargo/bin/mt.com"
+      - "C:/Users/USERNAME/.cargo/bin/mt.exe"
+      - "C:/Users/USERNAME/.cargo/bin/mt"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/USERNAME/.dotnet/tools/mt.com"
+      - "C:/Users/USERNAME/.dotnet/tools/mt.exe"
+      - "C:/Users/USERNAME/.dotnet/tools/mt"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/mt"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/mt"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/mt.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/mt.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/mt"
+      - "C:/Users/USERNAME/go/bin/mt.com"
+      - "C:/Users/USERNAME/go/bin/mt.exe"
+      - "C:/Users/USERNAME/go/bin/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-MSVC.cmake:592 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-MSVC.cmake:565 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/"
+      - "C:/Users/USERNAME/AppData/Local/nvm/"
+      - "C:/nvm4w/nodejs/"
+      - "C:/Program Files/Perforce/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Go/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/USERNAME/.cargo/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/USERNAME/.dotnet/tools/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/"
+      - "C:/Users/USERNAME/go/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/HexTile/bin/"
+      - "C:/Program Files/HexTile/sbin/"
+      - "C:/Program Files/HexTile/"
+    searched_directories:
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/rc.com"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/bin/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/rc"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/rc.com"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/rc.exe"
+      - "C:/Program Files (x86)/QuickTime Alternative/QTSystem/rc"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/rc.com"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/rc.exe"
+      - "C:/Program Files/Lightcraft Technology/Autoshot/rc"
+      - "C:/Users/USERNAME/AppData/Local/nvm/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/nvm/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/nvm/rc"
+      - "C:/nvm4w/nodejs/rc.com"
+      - "C:/nvm4w/nodejs/rc.exe"
+      - "C:/nvm4w/nodejs/rc"
+      - "C:/Program Files/Perforce/rc.com"
+      - "C:/Program Files/Perforce/rc.exe"
+      - "C:/Program Files/Perforce/rc"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Program Files/Go/bin/rc.com"
+      - "C:/Program Files/Go/bin/rc.exe"
+      - "C:/Program Files/Go/bin/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Users/USERNAME/.cargo/bin/rc.com"
+      - "C:/Users/USERNAME/.cargo/bin/rc.exe"
+      - "C:/Users/USERNAME/.cargo/bin/rc"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/USERNAME/.dotnet/tools/rc.com"
+      - "C:/Users/USERNAME/.dotnet/tools/rc.exe"
+      - "C:/Users/USERNAME/.dotnet/tools/rc"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/GitHubDesktop/bin/rc"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/bin/rc"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/rc.com"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/rc.exe"
+      - "C:/Users/USERNAME/AppData/Local/Programs/Ollama/rc"
+      - "C:/Users/USERNAME/go/bin/rc.com"
+      - "C:/Users/USERNAME/go/bin/rc.exe"
+      - "C:/Users/USERNAME/go/bin/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files/HexTile/bin/rc.com"
+      - "C:/Program Files/HexTile/bin/rc.exe"
+      - "C:/Program Files/HexTile/bin/rc"
+      - "C:/Program Files/HexTile/sbin/rc.com"
+      - "C:/Program Files/HexTile/sbin/rc.exe"
+      - "C:/Program Files/HexTile/sbin/rc"
+      - "C:/Program Files/HexTile/rc.com"
+      - "C:/Program Files/HexTile/rc.exe"
+      - "C:/Program Files/HexTile/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/HexTile"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/HexTile"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/CMakeScratch/TryCompile-zl3pfl"
+      binary: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/CMakeScratch/TryCompile-zl3pfl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/CMakeScratch/TryCompile-zl3pfl'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b8436.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild 縺ｮ繝舌・繧ｸ繝ｧ繝ｳ 17.14.19+164abd434 (.NET Framework)
+        2026/06/03 23:36:20 縺ｫ繝薙Ν繝峨ｒ髢句ｧ九＠縺ｾ縺励◆縲・
+        
+        繝弱・繝・1 荳翫・繝励Ο繧ｸ繧ｧ繧ｯ繝・"C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zl3pfl\\cmTC_b8436.vcxproj" (譌｢螳壹・繧ｿ繝ｼ繧ｲ繝・ヨ)縲・
+        PrepareForBuild:
+          讒矩\xc2\x80蛹門・蜉帙′譛牙柑縺ｫ縺ｪ縺｣縺ｦ縺・∪縺吶\xc2\x80ゅさ繝ｳ繝代う繝ｩ險ｺ譁ｭ縺ｮ譖ｸ蠑剰ｨｭ螳壹↓縺ｯ繧ｨ繝ｩ繝ｼ髫主ｱ､縺悟渚譏縺輔ｌ縺ｾ縺吶\xc2\x80りｩｳ邏ｰ縺ｫ縺､縺・※縺ｯ縲”ttps://aka.ms/cpp/structured-output 繧貞盾辣ｧ縺励※縺上□縺輔＞縲・
+          繝・ぅ繝ｬ繧ｯ繝医Μ "C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zl3pfl\\Debug\\" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+          繝・ぅ繝ｬ繧ｯ繝医Μ "cmTC_b8436.dir\\Debug\\cmTC_b8436.tlog\\" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+        InitializeBuildStatus:
+          "AlwaysCreate" 縺梧欠螳壹＆繧後◆縺溘ａ "cmTC_b8436.dir\\Debug\\cmTC_b8436.tlog\\unsuccessfulbuild" 繧剃ｽ懈・縺励※縺・∪縺吶\xc2\x80・
+          "cmTC_b8436.dir\\Debug\\cmTC_b8436.tlog\\unsuccessfulbuild" 縺ｮ繧ｿ繝・メ 繧ｿ繧ｹ繧ｯ繧貞ｮ溯｡後＠縺ｦ縺・∪縺吶\xc2\x80・
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_b8436.dir\\Debug\\\\" /Fd"cmTC_b8436.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft(R) C/C++ Optimizing Compiler Version 19.44.35215 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_b8436.dir\\Debug\\\\" /Fd"cmTC_b8436.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zl3pfl\\Debug\\cmTC_b8436.exe" /INCREMENTAL /ILK:"cmTC_b8436.dir\\Debug\\cmTC_b8436.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/CMakeScratch/TryCompile-zl3pfl/Debug/cmTC_b8436.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/CMakeScratch/TryCompile-zl3pfl/Debug/cmTC_b8436.lib" /MACHINE:X64  /machine:x64 cmTC_b8436.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_b8436.vcxproj -> C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zl3pfl\\Debug\\cmTC_b8436.exe
+        FinalizeBuildStatus:
+          繝輔ぃ繧､繝ｫ "cmTC_b8436.dir\\Debug\\cmTC_b8436.tlog\\unsuccessfulbuild" 繧貞炎髯､縺励※縺・∪縺吶\xc2\x80・
+          "cmTC_b8436.dir\\Debug\\cmTC_b8436.tlog\\cmTC_b8436.lastbuildstate" 縺ｮ繧ｿ繝・メ 繧ｿ繧ｹ繧ｯ繧貞ｮ溯｡後＠縺ｦ縺・∪縺吶\xc2\x80・
+        繝励Ο繧ｸ繧ｧ繧ｯ繝・"C:\\Users\\USERNAME\\Downloads\\work\\hex_tile\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zl3pfl\\cmTC_b8436.vcxproj" (譌｢螳壹・繧ｿ繝ｼ繧ｲ繝・ヨ) 縺ｮ繝薙Ν繝峨′螳御ｺ・＠縺ｾ縺励◆縲・
+        
+        繝薙Ν繝峨↓謌仙粥縺励∪縺励◆縲・
+            0 蛟九・隴ｦ蜻・
+            0 繧ｨ繝ｩ繝ｼ
+        
+        邨碁℃譎る俣 00:00:00.38
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35215.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Program Files/Nuke16.0v6/cmake/NukeConfig.cmake:10 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "FoundryGL"
+    configs:
+      -
+        filename: "FoundryGL.cps"
+        kind: "cps"
+      -
+        filename: "foundrygl.cps"
+        kind: "cps"
+      -
+        filename: "FoundryGLConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "foundrygl-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "FoundryGL"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/FoundryGLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/foundrygl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/lib/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/lib/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/share/cps/FoundryGL.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/share/cps/foundrygl.cps"
+        mode: "cps"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/HexTile"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/HexTile"
+      CMAKE_MODULE_PATH:
+        - "C:/Users/USERNAME/Downloads/work/hex_tile/cmake"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Nuke"
+    configs:
+      -
+        filename: "Nuke.cps"
+        kind: "cps"
+      -
+        filename: "nuke.cps"
+        kind: "cps"
+      -
+        filename: "NukeConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "nuke-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Nuke"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/pkgRedirects/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/libnvvp/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/libnvvp/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/VMware/VMware Workstation/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/QuickTime Alternative/QTSystem/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Lightcraft Technology/Autoshot/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/nvm/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/nvm4w/nodejs/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Perforce/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Go/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/.cargo/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WindowsApps/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Microsoft VS Code/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/GitHubDesktop/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.0.2-full_build/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/AppData/Local/Programs/Ollama/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/lib/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/lib/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/share/cps/Nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/USERNAME/go/share/cps/nuke.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Nuke16.0v6/NukeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Nuke16.0v6/nuke-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Program Files/Nuke16.0v6/cmake/NukeConfig.cmake"
+      mode: "config"
+      version: "16.0.6"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\libnvvp"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.9\\libnvvp"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\QuickTime Alternative\\QTSystem"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Lightcraft Technology\\Autoshot\\"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Perforce\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Go\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\USERNAME\\.cargo\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\USERNAME\\.dotnet\\tools"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.0.2-full_build\\bin"
+        - "C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Users\\USERNAME\\go\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/HexTile"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/HexTile"
+      CMAKE_MODULE_PATH:
+        - "C:/Users/USERNAME/Downloads/work/hex_tile/cmake"
+...

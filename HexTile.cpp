@@ -260,7 +260,10 @@ public:
     int         maximum_inputs() const override { return 2; }
     float       uses_input(int n) const override {
         if (n == 1) {
-            return (_heightWeight > 0.0f) ? 1.0f : 0.0f;
+            if (_heightWeight <= 0.0f) return 0.0f;
+            Op* op = input(1);
+            if (op && op->node_disabled()) return 0.0f;
+            return 1.0f;
         }
         return 1.0f;
     }
@@ -703,7 +706,10 @@ public:
     int         maximum_inputs() const override { return 2; }
     float       uses_input(int n) const override {
         if (n == 1) {
-            return (_heightWeight > 0.0f) ? 1.0f : 0.0f;
+            if (_heightWeight <= 0.0f) return 0.0f;
+            Op* op = input(1);
+            if (op && op->node_disabled()) return 0.0f;
+            return 1.0f;
         }
         return 1.0f;
     }

@@ -325,15 +325,11 @@ void HexTile::_validate(bool for_real)
 
     if (input(1) && !input(1)->node_disabled()) {
         try {
-            const Box& heightBox = static_cast<Iop*>(input(1))->info();
-            _heightOffsetX = heightBox.x();
-            _heightOffsetY = heightBox.y();
-            _heightWidth   = heightBox.r() - heightBox.x();
-            _heightHeight  = heightBox.t() - heightBox.y();
-            if (_heightWidth <= 0 || _heightHeight <= 0) {
-                _heightWidth = 0;
-                _heightHeight = 0;
-            }
+            static_cast<Iop*>(input(1))->info();
+            _heightOffsetX = _inputOffsetX;
+            _heightOffsetY = _inputOffsetY;
+            _heightWidth   = _inputWidth;
+            _heightHeight  = _inputHeight;
         } catch (...) {
             _heightWidth = 0;
             _heightHeight = 0;
@@ -769,15 +765,11 @@ void HexTileNormal::_validate(bool for_real)
 
     if (input(1) && !input(1)->node_disabled()) {
         try {
-            const Box& heightBox = static_cast<Iop*>(input(1))->info();
-            _heightOffsetX = heightBox.x();
-            _heightOffsetY = heightBox.y();
-            _heightWidth   = heightBox.r() - heightBox.x();
-            _heightHeight  = heightBox.t() - heightBox.y();
-            if (_heightWidth <= 0 || _heightHeight <= 0) {
-                _heightWidth = 0;
-                _heightHeight = 0;
-            }
+            static_cast<Iop*>(input(1))->info();
+            _heightOffsetX = _inputOffsetX;
+            _heightOffsetY = _inputOffsetY;
+            _heightWidth   = _inputWidth;
+            _heightHeight  = _inputHeight;
         } catch (...) {
             _heightWidth = 0;
             _heightHeight = 0;

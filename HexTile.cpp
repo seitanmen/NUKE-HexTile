@@ -127,6 +127,45 @@ static float gainScalar(float x, float k)
 
 
 // ---------------------------------------------------------------------------
+// Stochastic Height Blend helpers (after Redshift OSL HexTileCoordinates)
+// ---------------------------------------------------------------------------
+
+static float softThreshold(float a, float threshold, float delta)
+{
+    if (delta < 0.0001f) delta = 0.0001f;
+    float v = (a - threshold + delta) / delta;
+    if (v < 0.0f) v = 0.0f;
+    if (v > 1.0f) v = 1.0f;
+    return v;
+}
+
+static float softTwinThreshold(float a, float threshA, float threshB, float delta)
+{
+    float t1 = softThreshold(a, threshA, delta);
+    float t2 = softThreshold(a, threshB, delta);
+    return (t1 < t2) ? t1 : t2;
+}
+
+static bool safeGetHeightInfo(Op* op, int& ox, int& oy, int& w, int& h)
+{
+    ox = oy = w = h = 0;
+    if (!op) return false;
+    if (op->node_disabled()) return false;
+    Iop* iop = static_cast<Iop*>(op);
+    try {
+        const Box& b = iop->info();
+        ox = b.x();
+        oy = b.y();
+        w  = b.r() - b.x();
+        h  = b.t() - b.y();
+    } catch (...) {
+        return false;
+    }
+    return (w > 0 && h > 0);
+}
+
+
+// ---------------------------------------------------------------------------
 // Filtered sampling from a Nuke Tile with UV wrapping
 // ---------------------------------------------------------------------------
 
@@ -193,12 +232,18 @@ class HexTile : public Iop
     float _rotStrength;
     float _contrast;
     bool  _scaleOutput;
+    float _heightWeight;
+    float _heightDelta;
     Filter _filter;
 
     int _inputWidth;
     int _inputHeight;
     int _inputOffsetX;
     int _inputOffsetY;
+    int _heightWidth;
+    int _heightHeight;
+    int _heightOffsetX;
+    int _heightOffsetY;
     Format _scaledFormat;
 
 public:
@@ -210,6 +255,18 @@ public:
                          ChannelMask channels, int count) override;
     void        engine(int y, int x, int r,
                        ChannelMask channels, Row& row) override;
+
+    int         minimum_inputs() const override { return 1; }
+    int         maximum_inputs() const override { return 2; }
+    float       uses_input(int n) const override {
+        if (n == 1) {
+            return (_heightWeight > 0.0f) ? 1.0f : 0.0f;
+        }
+        return 1.0f;
+    }
+    const char* input_label(int n, char*) const override {
+        switch (n) { case 0: return "texture"; case 1: return "height"; default: return nullptr; }
+    }
 
     const char* Class()      const override { return CLASS; }
     const char* node_help()  const override { return HELP; }
@@ -224,11 +281,17 @@ HexTile::HexTile(Node* node)
     , _rotStrength(0.5f)
     , _contrast(0.75f)
     , _scaleOutput(false)
+    , _heightWeight(1.0f)
+    , _heightDelta(0.2f)
     , _filter(Filter::Cubic)
     , _inputWidth(0)
     , _inputHeight(0)
     , _inputOffsetX(0)
     , _inputOffsetY(0)
+    , _heightWidth(0)
+    , _heightHeight(0)
+    , _heightOffsetX(0)
+    , _heightOffsetY(0)
 {}
 
 
@@ -241,6 +304,8 @@ void HexTile::_validate(bool for_real)
     if (input0().node() == nullptr) {
         _inputWidth = 0;
         _inputHeight = 0;
+        _heightWidth = 0;
+        _heightHeight = 0;
         return;
     }
 
@@ -253,8 +318,29 @@ void HexTile::_validate(bool for_real)
     if (_inputWidth <= 0 || _inputHeight <= 0) {
         _inputWidth = 0;
         _inputHeight = 0;
-        return;
     }
+
+    if (input(1) && !input(1)->node_disabled()) {
+        try {
+            const Box& heightBox = static_cast<Iop*>(input(1))->info();
+            _heightOffsetX = heightBox.x();
+            _heightOffsetY = heightBox.y();
+            _heightWidth   = heightBox.r() - heightBox.x();
+            _heightHeight  = heightBox.t() - heightBox.y();
+            if (_heightWidth <= 0 || _heightHeight <= 0) {
+                _heightWidth = 0;
+                _heightHeight = 0;
+            }
+        } catch (...) {
+            _heightWidth = 0;
+            _heightHeight = 0;
+        }
+    } else {
+        _heightWidth = 0;
+        _heightHeight = 0;
+    }
+
+    if (_inputWidth <= 0 || _inputHeight <= 0) return;
 
     if (_scaleOutput) {
         const Format& fmt = info_.format();
@@ -284,6 +370,13 @@ void HexTile::_request(int x, int y, int r, int t,
                      _inputOffsetX + _inputWidth,
                      _inputOffsetY + _inputHeight,
                      channels, count);
+
+    if (_heightWidth > 0 && _heightHeight > 0 && input(1)) {
+        static_cast<Iop*>(input(1))->request(_heightOffsetX, _heightOffsetY,
+                         _heightOffsetX + _heightWidth,
+                         _heightOffsetY + _heightHeight,
+                         Mask_All, count);
+    }
 }
 
 
@@ -304,6 +397,17 @@ void HexTile::engine(int y, int x, int r,
               channels);
     if (aborted()) return;
 
+    Tile* heightTile = nullptr;
+    if (_heightWidth > 0 && _heightHeight > 0 && input(1)) {
+        heightTile = new Tile(*static_cast<Iop*>(input(1)),
+                    _heightOffsetX, _heightOffsetY,
+                    _heightOffsetX + _heightWidth,
+                    _heightOffsetY + _heightHeight,
+                    Mask_All);
+        if (aborted()) { delete heightTile; return; }
+    }
+    const bool useHeight = (heightTile != nullptr);
+
     _filter.initialize();
 
     const int MAX_CHANS = 64;
@@ -321,6 +425,14 @@ void HexTile::engine(int y, int x, int r,
     }
     const bool hasRGB = (idxR >= 0 && idxG >= 0 && idxB >= 0);
 
+    Channel heightChan = Chan_Red;
+    if (useHeight) {
+        const ChannelSet& hChans = heightTile->channels();
+        if (hChans.contains(Chan_Alpha))       heightChan = Chan_Alpha;
+        else if (hChans.contains(Chan_Red))    heightChan = Chan_Red;
+        else { heightChan = hChans.first(); }
+    }
+
     const float g_exp      = 7.0f;
     const float g_falloff  = 0.6f;
     const float Lw[3]      = {0.299f, 0.587f, 0.114f};
@@ -333,8 +445,6 @@ void HexTile::engine(int y, int x, int r,
     const float invIW = 1.0f / (float)_inputWidth;
     const float invIH = 1.0f / (float)_inputHeight;
 
-    // When scale_output is ON, output is tile_scale×larger so UV scale is 1.0.
-    // When OFF, UV scale is tile_scale (maps output pixels to tile units).
     const float uvScale = _scaleOutput ? 1.0f : _tileScale;
 
     for (int px = x; px < r; px++) {
@@ -388,43 +498,82 @@ void HexTile::engine(int y, int x, int r,
         }
 
         float W[3];
-        if (hasRGB) {
-            float D[3];
-            D[0] = s[0][idxR] * Lw[0] + s[0][idxG] * Lw[1] + s[0][idxB] * Lw[2];
-            D[1] = s[1][idxR] * Lw[0] + s[1][idxG] * Lw[1] + s[1][idxB] * Lw[2];
-            D[2] = s[2][idxR] * Lw[0] + s[2][idxG] * Lw[1] + s[2][idxB] * Lw[2];
 
-            float Dw[3];
-            Dw[0] = 1.0f + (D[0] - 1.0f) * g_falloff;
-            Dw[1] = 1.0f + (D[1] - 1.0f) * g_falloff;
-            Dw[2] = 1.0f + (D[2] - 1.0f) * g_falloff;
+        if (useHeight) {
+            float hv[3];
+            for (int k = 0; k < 3; k++) {
+                float stu = (k == 0) ? st1x : (k == 1) ? st2x : st3x;
+                float stv = (k == 0) ? st1y : (k == 1) ? st2y : st3y;
+                hv[k] = sampleFiltered(*heightTile, heightChan, stu, stv,
+                                       _heightWidth, _heightHeight,
+                                       _heightOffsetX, _heightOffsetY, _filter);
+            }
 
-            W[0] = Dw[0] * powf(w1, g_exp);
-            W[1] = Dw[1] * powf(w2, g_exp);
-            W[2] = Dw[2] * powf(w3, g_exp);
+            float rw[3];
+            rw[0] = w1 + _heightWeight * hv[0];
+            rw[1] = w2 + _heightWeight * hv[1];
+            rw[2] = w3 + _heightWeight * hv[2];
+
+            float delta = _heightDelta * 0.7071067811865476f;
+            float blend[3];
+            blend[0] = softTwinThreshold(rw[0], rw[1], rw[2], delta);
+            blend[1] = softTwinThreshold(rw[1], rw[0], rw[2], delta);
+            blend[2] = softTwinThreshold(rw[2], rw[0], rw[1], delta);
+
+            float gamma = (_contrast != 0.5f)
+                ? logf(1.0f - _contrast) / logf(0.5f)
+                : 1.0f;
+            if (gamma < 0.01f) gamma = 0.01f;
+
+            W[0] = powf(blend[0], gamma);
+            W[1] = powf(blend[1], gamma);
+            W[2] = powf(blend[2], gamma);
+
+            float wSum = W[0] + W[1] + W[2];
+            if (wSum > 0.0f) {
+                W[0] /= wSum;
+                W[1] /= wSum;
+                W[2] /= wSum;
+            }
         } else {
-            W[0] = powf(w1, g_exp);
-            W[1] = powf(w2, g_exp);
-            W[2] = powf(w3, g_exp);
-        }
+            if (hasRGB) {
+                float D[3];
+                D[0] = s[0][idxR] * Lw[0] + s[0][idxG] * Lw[1] + s[0][idxB] * Lw[2];
+                D[1] = s[1][idxR] * Lw[0] + s[1][idxG] * Lw[1] + s[1][idxB] * Lw[2];
+                D[2] = s[2][idxR] * Lw[0] + s[2][idxG] * Lw[1] + s[2][idxB] * Lw[2];
 
-        float wSum = W[0] + W[1] + W[2];
-        if (wSum > 0.0f) {
-            W[0] /= wSum;
-            W[1] /= wSum;
-            W[2] /= wSum;
-        }
+                float Dw[3];
+                Dw[0] = 1.0f + (D[0] - 1.0f) * g_falloff;
+                Dw[1] = 1.0f + (D[1] - 1.0f) * g_falloff;
+                Dw[2] = 1.0f + (D[2] - 1.0f) * g_falloff;
 
-        if (_contrast != 0.5f) {
-            float gW[3];
-            gW[0] = gainScalar(W[0], kGain);
-            gW[1] = gainScalar(W[1], kGain);
-            gW[2] = gainScalar(W[2], kGain);
-            float gSum = gW[0] + gW[1] + gW[2];
-            if (gSum > 0.0f) {
-                W[0] = gW[0] / gSum;
-                W[1] = gW[1] / gSum;
-                W[2] = gW[2] / gSum;
+                W[0] = Dw[0] * powf(w1, g_exp);
+                W[1] = Dw[1] * powf(w2, g_exp);
+                W[2] = Dw[2] * powf(w3, g_exp);
+            } else {
+                W[0] = powf(w1, g_exp);
+                W[1] = powf(w2, g_exp);
+                W[2] = powf(w3, g_exp);
+            }
+
+            float wSum = W[0] + W[1] + W[2];
+            if (wSum > 0.0f) {
+                W[0] /= wSum;
+                W[1] /= wSum;
+                W[2] /= wSum;
+            }
+
+            if (_contrast != 0.5f) {
+                float gW[3];
+                gW[0] = gainScalar(W[0], kGain);
+                gW[1] = gainScalar(W[1], kGain);
+                gW[2] = gainScalar(W[2], kGain);
+                float gSum = gW[0] + gW[1] + gW[2];
+                if (gSum > 0.0f) {
+                    W[0] = gW[0] / gSum;
+                    W[1] = gW[1] / gSum;
+                    W[2] = gW[2] / gSum;
+                }
             }
         }
 
@@ -433,6 +582,8 @@ void HexTile::engine(int y, int x, int r,
                 W[0] * s[0][i] + W[1] * s[1][i] + W[2] * s[2][i];
         }
     }
+
+    delete heightTile;
 }
 
 
@@ -465,6 +616,24 @@ void HexTile::knobs(Knob_Callback f)
         "0.50 = no adjustment (blending may look blurry). "
         "0.75 = recommended (restores crispness). "
         "0.99 = maximum contrast (may reveal the hex grid).");
+
+    Divider(f, "");
+
+    BeginGroup(f, "Height Blend");
+    Float_knob(f, &_heightWeight, IRange(0.0, 2.0), "height_weight", "height weight");
+    SetFlags(f, Knob::EARLY_STORE);
+    Tooltip(f,
+        "Influence of the height input on blend weights. "
+        "0.0 = ignore height (use luminance-based blending). "
+        "1.0 = full height-driven blending (recommended). "
+        "Only effective when the height input is connected.");
+    Float_knob(f, &_heightDelta, IRange(0.01, 1.0), "height_delta", "height delta");
+    Tooltip(f,
+        "Soft threshold for height-based blending. "
+        "Smaller values produce sharper transitions between tiles. "
+        "Larger values produce smoother transitions. "
+        "Only effective when the height input is connected.");
+    EndGroup(f);
 
     Divider(f, "");
 
@@ -506,12 +675,18 @@ class HexTileNormal : public Iop
     float _rotStrength;
     bool  _scaleOutput;
     bool  _directX;
+    float _heightWeight;
+    float _heightDelta;
     Filter _filter;
 
     int _inputWidth;
     int _inputHeight;
     int _inputOffsetX;
     int _inputOffsetY;
+    int _heightWidth;
+    int _heightHeight;
+    int _heightOffsetX;
+    int _heightOffsetY;
     Format _scaledFormat;
 
 public:
@@ -523,6 +698,18 @@ public:
                          ChannelMask channels, int count) override;
     void        engine(int y, int x, int r,
                        ChannelMask channels, Row& row) override;
+
+    int         minimum_inputs() const override { return 1; }
+    int         maximum_inputs() const override { return 2; }
+    float       uses_input(int n) const override {
+        if (n == 1) {
+            return (_heightWeight > 0.0f) ? 1.0f : 0.0f;
+        }
+        return 1.0f;
+    }
+    const char* input_label(int n, char*) const override {
+        switch (n) { case 0: return "normal"; case 1: return "height"; default: return nullptr; }
+    }
 
     const char* Class()      const override { return CLASS_NORMAL; }
     const char* node_help()  const override { return HELP_NORMAL; }
@@ -537,11 +724,17 @@ HexTileNormal::HexTileNormal(Node* node)
     , _rotStrength(0.5f)
     , _scaleOutput(false)
     , _directX(false)
+    , _heightWeight(1.0f)
+    , _heightDelta(0.2f)
     , _filter(Filter::Cubic)
     , _inputWidth(0)
     , _inputHeight(0)
     , _inputOffsetX(0)
     , _inputOffsetY(0)
+    , _heightWidth(0)
+    , _heightHeight(0)
+    , _heightOffsetX(0)
+    , _heightOffsetY(0)
 {}
 
 
@@ -552,6 +745,8 @@ void HexTileNormal::_validate(bool for_real)
     if (input0().node() == nullptr) {
         _inputWidth = 0;
         _inputHeight = 0;
+        _heightWidth = 0;
+        _heightHeight = 0;
         return;
     }
 
@@ -564,8 +759,29 @@ void HexTileNormal::_validate(bool for_real)
     if (_inputWidth <= 0 || _inputHeight <= 0) {
         _inputWidth = 0;
         _inputHeight = 0;
-        return;
     }
+
+    if (input(1) && !input(1)->node_disabled()) {
+        try {
+            const Box& heightBox = static_cast<Iop*>(input(1))->info();
+            _heightOffsetX = heightBox.x();
+            _heightOffsetY = heightBox.y();
+            _heightWidth   = heightBox.r() - heightBox.x();
+            _heightHeight  = heightBox.t() - heightBox.y();
+            if (_heightWidth <= 0 || _heightHeight <= 0) {
+                _heightWidth = 0;
+                _heightHeight = 0;
+            }
+        } catch (...) {
+            _heightWidth = 0;
+            _heightHeight = 0;
+        }
+    } else {
+        _heightWidth = 0;
+        _heightHeight = 0;
+    }
+
+    if (_inputWidth <= 0 || _inputHeight <= 0) return;
 
     if (_scaleOutput) {
         const Format& fmt = info_.format();
@@ -593,6 +809,13 @@ void HexTileNormal::_request(int x, int y, int r, int t,
                      _inputOffsetX + _inputWidth,
                      _inputOffsetY + _inputHeight,
                      channels, count);
+
+    if (_heightWidth > 0 && _heightHeight > 0 && input(1)) {
+        static_cast<Iop*>(input(1))->request(_heightOffsetX, _heightOffsetY,
+                         _heightOffsetX + _heightWidth,
+                         _heightOffsetY + _heightHeight,
+                         Mask_All, count);
+    }
 }
 
 
@@ -611,6 +834,17 @@ void HexTileNormal::engine(int y, int x, int r,
               channels);
     if (aborted()) return;
 
+    Tile* heightTile = nullptr;
+    if (_heightWidth > 0 && _heightHeight > 0 && input(1)) {
+        heightTile = new Tile(*static_cast<Iop*>(input(1)),
+                    _heightOffsetX, _heightOffsetY,
+                    _heightOffsetX + _heightWidth,
+                    _heightOffsetY + _heightHeight,
+                    Mask_All);
+        if (aborted()) { delete heightTile; return; }
+    }
+    const bool useHeight = (heightTile != nullptr);
+
     _filter.initialize();
 
     const int MAX_CHANS = 64;
@@ -627,6 +861,14 @@ void HexTileNormal::engine(int y, int x, int r,
         if (chanList[i] == Chan_Blue)  idxB = i;
     }
     const bool hasRGB = (idxR >= 0 && idxG >= 0 && idxB >= 0);
+
+    Channel heightChan = Chan_Red;
+    if (useHeight) {
+        const ChannelSet& hChans = heightTile->channels();
+        if (hChans.contains(Chan_Alpha))       heightChan = Chan_Alpha;
+        else if (hChans.contains(Chan_Red))    heightChan = Chan_Red;
+        else { heightChan = hChans.first(); }
+    }
 
     const float g_exp = 7.0f;
     const float invIW = 1.0f / (float)_inputWidth;
@@ -683,14 +925,12 @@ void HexTileNormal::engine(int y, int x, int r,
                                      _inputOffsetX, _inputOffsetY, _filter);
         }
 
-        // Mikkelsen bumphex2derivNMap approach:
-        // Convert normals to partial derivatives, correct rotation, blend, reconstruct.
-        // Derivatives are linear so blending them is equivalent to blending height fields.
+        struct { float ca, cb; } rot[3] = {
+            {c1a, c1b}, {c2a, c2b}, {c3a, c3b}
+        };
+
         float out[MAX_CHANS];
         if (hasRGB) {
-            struct { float ca, cb; } rot[3] = {
-                {c1a, c1b}, {c2a, c2b}, {c3a, c3b}
-            };
             float dx[3], dy[3];
             const float nzScale = 1.0f / 128.0f;
 
@@ -706,23 +946,48 @@ void HexTileNormal::engine(int y, int x, int r,
                 float dux = -nx / nzSafe;
                 float duy = -ny / nzSafe;
 
-                // Counter-rotate derivative: [ca -cb; cb ca] (V-up tangent space)
                 dx[k] =  rot[k].ca * dux - rot[k].cb * duy;
                 dy[k] =  rot[k].cb * dux + rot[k].ca * duy;
             }
 
-            // Slope-based weight diffusion (gives more weight to steeper detail)
-            const float g_falloff = 0.6f;
-            float Dw[3];
-            for (int k = 0; k < 3; k++) {
-                float D = dx[k] * dx[k] + dy[k] * dy[k];
-                Dw[k] = 1.0f + (sqrtf(D / (1.0f + D)) - 1.0f) * g_falloff;
-            }
-
             float W[3];
-            W[0] = Dw[0] * powf(w1, g_exp);
-            W[1] = Dw[1] * powf(w2, g_exp);
-            W[2] = Dw[2] * powf(w3, g_exp);
+
+            if (useHeight) {
+                float hv[3];
+                for (int k = 0; k < 3; k++) {
+                    float stu = (k == 0) ? st1x : (k == 1) ? st2x : st3x;
+                    float stv = (k == 0) ? st1y : (k == 1) ? st2y : st3y;
+                    hv[k] = sampleFiltered(*heightTile, heightChan, stu, stv,
+                                           _heightWidth, _heightHeight,
+                                           _heightOffsetX, _heightOffsetY, _filter);
+                }
+
+                float rw[3];
+                rw[0] = w1 + _heightWeight * hv[0];
+                rw[1] = w2 + _heightWeight * hv[1];
+                rw[2] = w3 + _heightWeight * hv[2];
+
+                float delta = _heightDelta * 0.7071067811865476f;
+                float blend[3];
+                blend[0] = softTwinThreshold(rw[0], rw[1], rw[2], delta);
+                blend[1] = softTwinThreshold(rw[1], rw[0], rw[2], delta);
+                blend[2] = softTwinThreshold(rw[2], rw[0], rw[1], delta);
+
+                W[0] = blend[0];
+                W[1] = blend[1];
+                W[2] = blend[2];
+            } else {
+                const float g_falloff = 0.6f;
+                float Dw[3];
+                for (int k = 0; k < 3; k++) {
+                    float D = dx[k] * dx[k] + dy[k] * dy[k];
+                    Dw[k] = 1.0f + (sqrtf(D / (1.0f + D)) - 1.0f) * g_falloff;
+                }
+
+                W[0] = Dw[0] * powf(w1, g_exp);
+                W[1] = Dw[1] * powf(w2, g_exp);
+                W[2] = Dw[2] * powf(w3, g_exp);
+            }
 
             float wSum = W[0] + W[1] + W[2];
             if (wSum > 0.0f) { W[0] /= wSum; W[1] /= wSum; W[2] /= wSum; }
@@ -730,7 +995,6 @@ void HexTileNormal::engine(int y, int x, int r,
             float blendDx = W[0] * dx[0] + W[1] * dx[1] + W[2] * dx[2];
             float blendDy = W[0] * dy[0] + W[1] * dy[1] + W[2] * dy[2];
 
-            // Reconstruct normal from blended derivative
             float outNx = -blendDx;
             float outNy = -blendDy;
             if (_directX) outNy = -outNy;
@@ -741,19 +1005,46 @@ void HexTileNormal::engine(int y, int x, int r,
             out[idxG] = (outNy * invLen) * 0.5f + 0.5f;
             out[idxB] = (outNz * invLen) * 0.5f + 0.5f;
 
-            // Non-RGB channels blend normally
             for (int i = 0; i < numChans; i++) {
                 if (i == idxR || i == idxG || i == idxB) continue;
                 out[i] = W[0] * s[0][i] + W[1] * s[1][i] + W[2] * s[2][i];
             }
         } else {
-            // No RGB channels — plain barycentric blend
             float W[3];
-            W[0] = powf(w1, g_exp);
-            W[1] = powf(w2, g_exp);
-            W[2] = powf(w3, g_exp);
-            float wSum = W[0] + W[1] + W[2];
-            if (wSum > 0.0f) { W[0] /= wSum; W[1] /= wSum; W[2] /= wSum; }
+            if (useHeight) {
+                float hv[3];
+                for (int k = 0; k < 3; k++) {
+                    float stu = (k == 0) ? st1x : (k == 1) ? st2x : st3x;
+                    float stv = (k == 0) ? st1y : (k == 1) ? st2y : st3y;
+                    hv[k] = sampleFiltered(*heightTile, heightChan, stu, stv,
+                                           _heightWidth, _heightHeight,
+                                           _heightOffsetX, _heightOffsetY, _filter);
+                }
+
+                float rw[3];
+                rw[0] = w1 + _heightWeight * hv[0];
+                rw[1] = w2 + _heightWeight * hv[1];
+                rw[2] = w3 + _heightWeight * hv[2];
+
+                float delta = _heightDelta * 0.7071067811865476f;
+                float blend[3];
+                blend[0] = softTwinThreshold(rw[0], rw[1], rw[2], delta);
+                blend[1] = softTwinThreshold(rw[1], rw[0], rw[2], delta);
+                blend[2] = softTwinThreshold(rw[2], rw[0], rw[1], delta);
+
+                float bSum = blend[0] + blend[1] + blend[2];
+                if (bSum > 0.0f) {
+                    W[0] = blend[0] / bSum;
+                    W[1] = blend[1] / bSum;
+                    W[2] = blend[2] / bSum;
+                } else { W[0] = W[1] = W[2] = 1.0f / 3.0f; }
+            } else {
+                W[0] = powf(w1, g_exp);
+                W[1] = powf(w2, g_exp);
+                W[2] = powf(w3, g_exp);
+                float wSum = W[0] + W[1] + W[2];
+                if (wSum > 0.0f) { W[0] /= wSum; W[1] /= wSum; W[2] /= wSum; }
+            }
             for (int i = 0; i < numChans; i++)
                 out[i] = W[0] * s[0][i] + W[1] * s[1][i] + W[2] * s[2][i];
         }
@@ -762,6 +1053,8 @@ void HexTileNormal::engine(int y, int x, int r,
             row.writable(chanList[i])[px] = out[i];
         }
     }
+
+    delete heightTile;
 }
 
 
@@ -791,6 +1084,24 @@ void HexTileNormal::knobs(Knob_Callback f)
         "Enable for DirectX-style normal maps (G = +Y down). "
         "OFF: OpenGL convention (G = +Y up) — default. "
         "ON: DirectX convention (G = +Y down).");
+
+    Divider(f, "");
+
+    BeginGroup(f, "Height Blend");
+    Float_knob(f, &_heightWeight, IRange(0.0, 2.0), "height_weight", "height weight");
+    SetFlags(f, Knob::EARLY_STORE);
+    Tooltip(f,
+        "Influence of the height input on blend weights. "
+        "0.0 = ignore height (use derivative-based blending). "
+        "1.0 = full height-driven blending (recommended). "
+        "Only effective when the height input is connected.");
+    Float_knob(f, &_heightDelta, IRange(0.01, 1.0), "height_delta", "height delta");
+    Tooltip(f,
+        "Soft threshold for height-based blending. "
+        "Smaller values produce sharper transitions between tiles. "
+        "Larger values produce smoother transitions. "
+        "Only effective when the height input is connected.");
+    EndGroup(f);
 
     Divider(f, "");
 

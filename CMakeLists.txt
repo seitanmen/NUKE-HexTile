@@ -6,6 +6,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHa")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /OPT:NOREF")
 endif()
 
@@ -14,13 +15,3 @@ find_package(Nuke REQUIRED)
 
 # Build the plugin
 add_nuke_plugin(HexTile HexTile.cpp)
-
-# --- optional: copy to ~/.nuke after build (Windows) ---
-if(WIN32)
-    add_custom_command(TARGET HexTile POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "$<TARGET_FILE:HexTile>"
-            "$ENV{USERPROFILE}/.nuke/HexTile.dll"
-        COMMENT "Copying HexTile.dll to ~/.nuke/"
-    )
-endif()

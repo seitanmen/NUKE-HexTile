@@ -244,6 +244,10 @@ class HexTile : public Iop
     int _heightHeight;
     int _heightOffsetX;
     int _heightOffsetY;
+    int _heightWrapW;
+    int _heightWrapH;
+    int _heightWrapOffX;
+    int _heightWrapOffY;
     Format _scaledFormat;
 
 public:
@@ -295,6 +299,10 @@ HexTile::HexTile(Node* node)
     , _heightHeight(0)
     , _heightOffsetX(0)
     , _heightOffsetY(0)
+    , _heightWrapW(0)
+    , _heightWrapH(0)
+    , _heightWrapOffX(0)
+    , _heightWrapOffY(0)
 {}
 
 
@@ -325,18 +333,24 @@ void HexTile::_validate(bool for_real)
 
     if (input(1) && !input(1)->node_disabled()) {
         try {
-            static_cast<Iop*>(input(1))->info();
-            _heightOffsetX = _inputOffsetX;
-            _heightOffsetY = _inputOffsetY;
-            _heightWidth   = _inputWidth;
-            _heightHeight  = _inputHeight;
+            const Box& heightBox = static_cast<Iop*>(input(1))->info();
+            _heightWrapW     = heightBox.r() - heightBox.x();
+            _heightWrapH     = heightBox.t() - heightBox.y();
+            _heightWrapOffX  = heightBox.x();
+            _heightWrapOffY  = heightBox.y();
         } catch (...) {
-            _heightWidth = 0;
-            _heightHeight = 0;
+            _heightWrapW = 0;
+            _heightWrapH = 0;
         }
+        _heightOffsetX = _inputOffsetX;
+        _heightOffsetY = _inputOffsetY;
+        _heightWidth   = _inputWidth;
+        _heightHeight  = _inputHeight;
     } else {
-        _heightWidth = 0;
-        _heightHeight = 0;
+        _heightWidth   = 0;
+        _heightHeight  = 0;
+        _heightWrapW   = 0;
+        _heightWrapH   = 0;
     }
 
     if (_inputWidth <= 0 || _inputHeight <= 0) return;
@@ -501,27 +515,27 @@ void HexTile::engine(int y, int x, int r,
         if (useHeight) {
             float hv[3];
             for (int k = 0; k < 3; k++) {
-                float stu = (k == 0) ? st1x : (k == 1) ? st2x : st3x;
-                float stv = (k == 0) ? st1y : (k == 1) ? st2y : st3y;
-                hv[k] = sampleFiltered(*heightTile, heightChan, stu, stv,
-                                       _heightWidth, _heightHeight,
-                                       _heightOffsetX, _heightOffsetY, _filter);
-            }
+                    float stu = (k == 0) ? st1x : (k == 1) ? st2x : st3x;
+                    float stv = (k == 0) ? st1y : (k == 1) ? st2y : st3y;
+                    hv[k] = sampleFiltered(*heightTile, heightChan, stu, stv,
+                                           _heightWrapW, _heightWrapH,
+                                           _heightWrapOffX, _heightWrapOffY, _filter);
+                }
 
-            float rw[3];
-            rw[0] = w1 + _heightWeight * hv[0];
-            rw[1] = w2 + _heightWeight * hv[1];
-            rw[2] = w3 + _heightWeight * hv[2];
+                float rw[3];
+                rw[0] = w1 + _heightWeight * hv[0];
+                rw[1] = w2 + _heightWeight * hv[1];
+                rw[2] = w3 + _heightWeight * hv[2];
 
-            float delta = _heightDelta * 0.7071067811865476f;
-            float blend[3];
-            blend[0] = softTwinThreshold(rw[0], rw[1], rw[2], delta);
-            blend[1] = softTwinThreshold(rw[1], rw[0], rw[2], delta);
-            blend[2] = softTwinThreshold(rw[2], rw[0], rw[1], delta);
+                float delta = _heightDelta * 0.7071067811865476f;
+                float blend[3];
+                blend[0] = softTwinThreshold(rw[0], rw[1], rw[2], delta);
+                blend[1] = softTwinThreshold(rw[1], rw[0], rw[2], delta);
+                blend[2] = softTwinThreshold(rw[2], rw[0], rw[1], delta);
 
-            float gamma = (_contrast != 0.5f)
-                ? logf(1.0f - _contrast) / logf(0.5f)
-                : 1.0f;
+                float gamma = (_contrast != 0.5f)
+                    ? logf(1.0f - _contrast) / logf(0.5f)
+                    : 1.0f;
             if (gamma < 0.01f) gamma = 0.01f;
 
             W[0] = powf(blend[0], gamma);
@@ -686,6 +700,10 @@ class HexTileNormal : public Iop
     int _heightHeight;
     int _heightOffsetX;
     int _heightOffsetY;
+    int _heightWrapW;
+    int _heightWrapH;
+    int _heightWrapOffX;
+    int _heightWrapOffY;
     Format _scaledFormat;
 
 public:
@@ -737,6 +755,10 @@ HexTileNormal::HexTileNormal(Node* node)
     , _heightHeight(0)
     , _heightOffsetX(0)
     , _heightOffsetY(0)
+    , _heightWrapW(0)
+    , _heightWrapH(0)
+    , _heightWrapOffX(0)
+    , _heightWrapOffY(0)
 {}
 
 
@@ -765,18 +787,24 @@ void HexTileNormal::_validate(bool for_real)
 
     if (input(1) && !input(1)->node_disabled()) {
         try {
-            static_cast<Iop*>(input(1))->info();
-            _heightOffsetX = _inputOffsetX;
-            _heightOffsetY = _inputOffsetY;
-            _heightWidth   = _inputWidth;
-            _heightHeight  = _inputHeight;
+            const Box& heightBox = static_cast<Iop*>(input(1))->info();
+            _heightWrapW     = heightBox.r() - heightBox.x();
+            _heightWrapH     = heightBox.t() - heightBox.y();
+            _heightWrapOffX  = heightBox.x();
+            _heightWrapOffY  = heightBox.y();
         } catch (...) {
-            _heightWidth = 0;
-            _heightHeight = 0;
+            _heightWrapW = 0;
+            _heightWrapH = 0;
         }
+        _heightOffsetX = _inputOffsetX;
+        _heightOffsetY = _inputOffsetY;
+        _heightWidth   = _inputWidth;
+        _heightHeight  = _inputHeight;
     } else {
-        _heightWidth = 0;
-        _heightHeight = 0;
+        _heightWidth   = 0;
+        _heightHeight  = 0;
+        _heightWrapW   = 0;
+        _heightWrapH   = 0;
     }
 
     if (_inputWidth <= 0 || _inputHeight <= 0) return;

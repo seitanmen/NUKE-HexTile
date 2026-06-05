@@ -146,24 +146,6 @@ static float softTwinThreshold(float a, float threshA, float threshB, float delt
     return (t1 < t2) ? t1 : t2;
 }
 
-static bool safeGetHeightInfo(Op* op, int& ox, int& oy, int& w, int& h)
-{
-    ox = oy = w = h = 0;
-    if (!op) return false;
-    if (op->node_disabled()) return false;
-    Iop* iop = static_cast<Iop*>(op);
-    try {
-        const Box& b = iop->info();
-        ox = b.x();
-        oy = b.y();
-        w  = b.r() - b.x();
-        h  = b.t() - b.y();
-    } catch (...) {
-        return false;
-    }
-    return (w > 0 && h > 0);
-}
-
 
 // ---------------------------------------------------------------------------
 // Filtered sampling from a Nuke Tile with UV wrapping
@@ -332,25 +314,19 @@ void HexTile::_validate(bool for_real)
     }
 
     if (input(1) && !input(1)->node_disabled()) {
-        try {
-            const Box& heightBox = static_cast<Iop*>(input(1))->info();
-            _heightWrapW     = heightBox.r() - heightBox.x();
-            _heightWrapH     = heightBox.t() - heightBox.y();
-            _heightWrapOffX  = heightBox.x();
-            _heightWrapOffY  = heightBox.y();
-        } catch (...) {
-            _heightWrapW = 0;
-            _heightWrapH = 0;
-        }
-        _heightOffsetX = _inputOffsetX;
-        _heightOffsetY = _inputOffsetY;
-        _heightWidth   = _inputWidth;
-        _heightHeight  = _inputHeight;
+        _heightOffsetX  = _inputOffsetX;
+        _heightOffsetY  = _inputOffsetY;
+        _heightWidth    = _inputWidth;
+        _heightHeight   = _inputHeight;
+        _heightWrapW    = _inputWidth;
+        _heightWrapH    = _inputHeight;
+        _heightWrapOffX = _inputOffsetX;
+        _heightWrapOffY = _inputOffsetY;
     } else {
-        _heightWidth   = 0;
-        _heightHeight  = 0;
-        _heightWrapW   = 0;
-        _heightWrapH   = 0;
+        _heightWidth    = 0;
+        _heightHeight   = 0;
+        _heightWrapW    = 0;
+        _heightWrapH    = 0;
     }
 
     if (_inputWidth <= 0 || _inputHeight <= 0) return;
@@ -786,25 +762,19 @@ void HexTileNormal::_validate(bool for_real)
     }
 
     if (input(1) && !input(1)->node_disabled()) {
-        try {
-            const Box& heightBox = static_cast<Iop*>(input(1))->info();
-            _heightWrapW     = heightBox.r() - heightBox.x();
-            _heightWrapH     = heightBox.t() - heightBox.y();
-            _heightWrapOffX  = heightBox.x();
-            _heightWrapOffY  = heightBox.y();
-        } catch (...) {
-            _heightWrapW = 0;
-            _heightWrapH = 0;
-        }
-        _heightOffsetX = _inputOffsetX;
-        _heightOffsetY = _inputOffsetY;
-        _heightWidth   = _inputWidth;
-        _heightHeight  = _inputHeight;
+        _heightOffsetX  = _inputOffsetX;
+        _heightOffsetY  = _inputOffsetY;
+        _heightWidth    = _inputWidth;
+        _heightHeight   = _inputHeight;
+        _heightWrapW    = _inputWidth;
+        _heightWrapH    = _inputHeight;
+        _heightWrapOffX = _inputOffsetX;
+        _heightWrapOffY = _inputOffsetY;
     } else {
-        _heightWidth   = 0;
-        _heightHeight  = 0;
-        _heightWrapW   = 0;
-        _heightWrapH   = 0;
+        _heightWidth    = 0;
+        _heightHeight   = 0;
+        _heightWrapW    = 0;
+        _heightWrapH    = 0;
     }
 
     if (_inputWidth <= 0 || _inputHeight <= 0) return;

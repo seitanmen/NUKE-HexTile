@@ -5,6 +5,10 @@ project(HexTile LANGUAGES CXX)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+if(MSVC)
+    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /OPT:NOREF")
+endif()
+
 # Locate Nuke NDK (sets Nuke::NDK target and add_nuke_plugin helper)
 find_package(Nuke REQUIRED)
 

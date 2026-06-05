@@ -479,9 +479,335 @@ void HexTile::knobs(Knob_Callback f)
 
 
 // ---------------------------------------------------------------------------
-// Registration
+// Registration — HexTile
 // ---------------------------------------------------------------------------
 
 static Iop* build(Node* node) { return new HexTile(node); }
 
 const Iop::Description HexTile::d(CLASS, "Texture/HexTile", build);
+
+
+// ---------------------------------------------------------------------------
+// HexTile_Normal — Normal map variant (no luminance diffusion, vector normalization)
+// ---------------------------------------------------------------------------
+
+static const char* const CLASS_NORMAL = "HexTile_Normal";
+static const char* const HELP_NORMAL =
+    "HexTile_Normal v1.0.0 — Stochastic hex-tiling for normal maps.\n"
+    "Copyright (c) 2026 kawata. All rights reserved.\n\n"
+    "Same hex-tiling algorithm as HexTile but without luminance-based weight diffusion. "
+    "Blended normal vectors are re-normalized to unit length.\n\n"
+    "Feed a seamlessly tileable normal map into the input.\n\n"
+    "Reference: http://jcgt.org/published/0011/03/05/";
+
+class HexTileNormal : public Iop
+{
+    float _tileScale;
+    float _rotStrength;
+    bool  _scaleOutput;
+    bool  _directX;
+    Filter _filter;
+
+    int _inputWidth;
+    int _inputHeight;
+    int _inputOffsetX;
+    int _inputOffsetY;
+    Format _scaledFormat;
+
+public:
+    HexTileNormal(Node* node);
+
+    void        knobs(Knob_Callback f) override;
+    void        _validate(bool for_real) override;
+    void        _request(int x, int y, int r, int t,
+                         ChannelMask channels, int count) override;
+    void        engine(int y, int x, int r,
+                       ChannelMask channels, Row& row) override;
+
+    const char* Class()      const override { return CLASS_NORMAL; }
+    const char* node_help()  const override { return HELP_NORMAL; }
+
+    static const Iop::Description d;
+};
+
+
+HexTileNormal::HexTileNormal(Node* node)
+    : Iop(node)
+    , _tileScale(2.0f)
+    , _rotStrength(0.5f)
+    , _scaleOutput(false)
+    , _directX(false)
+    , _filter(Filter::Cubic)
+    , _inputWidth(0)
+    , _inputHeight(0)
+    , _inputOffsetX(0)
+    , _inputOffsetY(0)
+{}
+
+
+void HexTileNormal::_validate(bool for_real)
+{
+    copy_info();
+
+    if (input0().node() == nullptr) {
+        _inputWidth = 0;
+        _inputHeight = 0;
+        return;
+    }
+
+    const Box& inputBox = input0().info();
+    _inputOffsetX = inputBox.x();
+    _inputOffsetY = inputBox.y();
+    _inputWidth   = inputBox.r() - inputBox.x();
+    _inputHeight  = inputBox.t() - inputBox.y();
+
+    if (_inputWidth <= 0 || _inputHeight <= 0) {
+        _inputWidth = 0;
+        _inputHeight = 0;
+        return;
+    }
+
+    if (_scaleOutput) {
+        const Format& fmt = info_.format();
+        int outW = (int)((float)(fmt.r() - fmt.x()) * _tileScale + 0.5f);
+        int outH = (int)((float)(fmt.t() - fmt.y()) * _tileScale + 0.5f);
+        _scaledFormat = Format(outW, outH);
+        info_.format(_scaledFormat);
+        info_.full_size_format(_scaledFormat);
+        info_.set(0, 0, outW, outH);
+    } else {
+        const Format& fmt = info_.format();
+        info_.set(fmt.x(), fmt.y(), fmt.r(), fmt.t());
+    }
+
+    set_out_channels(Mask_All);
+}
+
+
+void HexTileNormal::_request(int x, int y, int r, int t,
+                              ChannelMask channels, int count)
+{
+    if (_inputWidth <= 0 || _inputHeight <= 0) return;
+
+    input0().request(_inputOffsetX, _inputOffsetY,
+                     _inputOffsetX + _inputWidth,
+                     _inputOffsetY + _inputHeight,
+                     channels, count);
+}
+
+
+void HexTileNormal::engine(int y, int x, int r,
+                            ChannelMask channels, Row& row)
+{
+    if (_inputWidth <= 0 || _inputHeight <= 0) {
+        row.erase(channels);
+        return;
+    }
+
+    Tile tile(input0(),
+              _inputOffsetX, _inputOffsetY,
+              _inputOffsetX + _inputWidth,
+              _inputOffsetY + _inputHeight,
+              channels);
+    if (aborted()) return;
+
+    _filter.initialize();
+
+    const int MAX_CHANS = 64;
+    Channel chanList[MAX_CHANS];
+    int     numChans = 0;
+    for (Channel z = channels.first(); z != Chan_Black; z = channels.next(z)) {
+        if (numChans < MAX_CHANS) chanList[numChans++] = z;
+    }
+
+    int idxR = -1, idxG = -1, idxB = -1;
+    for (int i = 0; i < numChans; i++) {
+        if (chanList[i] == Chan_Red)   idxR = i;
+        if (chanList[i] == Chan_Green) idxG = i;
+        if (chanList[i] == Chan_Blue)  idxB = i;
+    }
+    const bool hasRGB = (idxR >= 0 && idxG >= 0 && idxB >= 0);
+
+    const float g_exp = 7.0f;
+    const float invIW = 1.0f / (float)_inputWidth;
+    const float invIH = 1.0f / (float)_inputHeight;
+    const float uvScale = _scaleOutput ? 1.0f : _tileScale;
+
+    for (int px = x; px < r; px++) {
+
+        float stx = (float)px * uvScale * invIW;
+        float sty = (float)y   * uvScale * invIH;
+
+        float w1, w2, w3;
+        float v1x, v1y, v2x, v2y, v3x, v3y;
+        TriangleGrid(stx, sty, w1, w2, w3,
+                     v1x, v1y, v2x, v2y, v3x, v3y);
+
+        float c1a, c1b, c2a, c2b, c3a, c3b;
+        LoadRot2x2(v1x, v1y, _rotStrength, c1a, c1b);
+        LoadRot2x2(v2x, v2y, _rotStrength, c2a, c2b);
+        LoadRot2x2(v3x, v3y, _rotStrength, c3a, c3b);
+
+        float cen1x, cen1y, cen2x, cen2y, cen3x, cen3y;
+        MakeCenST(v1x, v1y, cen1x, cen1y);
+        MakeCenST(v2x, v2y, cen2x, cen2y);
+        MakeCenST(v3x, v3y, cen3x, cen3y);
+
+        float h1x, h1y, h2x, h2y, h3x, h3y;
+        hexHash(v1x, v1y, h1x, h1y);
+        hexHash(v2x, v2y, h2x, h2y);
+        hexHash(v3x, v3y, h3x, h3y);
+
+        float dx1 = stx - cen1x, dy1 = sty - cen1y;
+        float st1x = c1a * dx1 - c1b * dy1 + cen1x + h1x;
+        float st1y = c1b * dx1 + c1a * dy1 + cen1y + h1y;
+
+        float dx2 = stx - cen2x, dy2 = sty - cen2y;
+        float st2x = c2a * dx2 - c2b * dy2 + cen2x + h2x;
+        float st2y = c2b * dx2 + c2a * dy2 + cen2y + h2y;
+
+        float dx3 = stx - cen3x, dy3 = sty - cen3y;
+        float st3x = c3a * dx3 - c3b * dy3 + cen3x + h3x;
+        float st3y = c3b * dx3 + c3a * dy3 + cen3y + h3y;
+
+        float s[3][MAX_CHANS];
+        for (int i = 0; i < numChans; i++) {
+            s[0][i] = sampleFiltered(tile, chanList[i], st1x, st1y,
+                                     _inputWidth, _inputHeight,
+                                     _inputOffsetX, _inputOffsetY, _filter);
+            s[1][i] = sampleFiltered(tile, chanList[i], st2x, st2y,
+                                     _inputWidth, _inputHeight,
+                                     _inputOffsetX, _inputOffsetY, _filter);
+            s[2][i] = sampleFiltered(tile, chanList[i], st3x, st3y,
+                                     _inputWidth, _inputHeight,
+                                     _inputOffsetX, _inputOffsetY, _filter);
+        }
+
+        // Mikkelsen bumphex2derivNMap approach:
+        // Convert normals to partial derivatives, correct rotation, blend, reconstruct.
+        // Derivatives are linear so blending them is equivalent to blending height fields.
+        float out[MAX_CHANS];
+        if (hasRGB) {
+            struct { float ca, cb; } rot[3] = {
+                {c1a, c1b}, {c2a, c2b}, {c3a, c3b}
+            };
+            float dx[3], dy[3];
+            const float nzScale = 1.0f / 128.0f;
+
+            for (int k = 0; k < 3; k++) {
+                float nx = s[k][idxR] * 2.0f - 1.0f;
+                float ny = s[k][idxG] * 2.0f - 1.0f;
+                if (_directX) ny = -ny;
+                float nz = s[k][idxB] * 2.0f - 1.0f;
+
+                float nzSafe = fmaxf(fabsf(nz), nzScale * fmaxf(fabsf(nx), fabsf(ny)));
+                if (nz < 0.0f) nzSafe = -nzSafe;
+
+                float dux = -nx / nzSafe;
+                float duy = -ny / nzSafe;
+
+                // Counter-rotate derivative: [ca -cb; cb ca] (V-up tangent space)
+                dx[k] =  rot[k].ca * dux - rot[k].cb * duy;
+                dy[k] =  rot[k].cb * dux + rot[k].ca * duy;
+            }
+
+            // Slope-based weight diffusion (gives more weight to steeper detail)
+            const float g_falloff = 0.6f;
+            float Dw[3];
+            for (int k = 0; k < 3; k++) {
+                float D = dx[k] * dx[k] + dy[k] * dy[k];
+                Dw[k] = 1.0f + (sqrtf(D / (1.0f + D)) - 1.0f) * g_falloff;
+            }
+
+            float W[3];
+            W[0] = Dw[0] * powf(w1, g_exp);
+            W[1] = Dw[1] * powf(w2, g_exp);
+            W[2] = Dw[2] * powf(w3, g_exp);
+
+            float wSum = W[0] + W[1] + W[2];
+            if (wSum > 0.0f) { W[0] /= wSum; W[1] /= wSum; W[2] /= wSum; }
+
+            float blendDx = W[0] * dx[0] + W[1] * dx[1] + W[2] * dx[2];
+            float blendDy = W[0] * dy[0] + W[1] * dy[1] + W[2] * dy[2];
+
+            // Reconstruct normal from blended derivative
+            float outNx = -blendDx;
+            float outNy = -blendDy;
+            if (_directX) outNy = -outNy;
+            float outNz = 1.0f;
+            float len = sqrtf(outNx * outNx + outNy * outNy + outNz * outNz);
+            float invLen = 1.0f / len;
+            out[idxR] = (outNx * invLen) * 0.5f + 0.5f;
+            out[idxG] = (outNy * invLen) * 0.5f + 0.5f;
+            out[idxB] = (outNz * invLen) * 0.5f + 0.5f;
+
+            // Non-RGB channels blend normally
+            for (int i = 0; i < numChans; i++) {
+                if (i == idxR || i == idxG || i == idxB) continue;
+                out[i] = W[0] * s[0][i] + W[1] * s[1][i] + W[2] * s[2][i];
+            }
+        } else {
+            // No RGB channels — plain barycentric blend
+            float W[3];
+            W[0] = powf(w1, g_exp);
+            W[1] = powf(w2, g_exp);
+            W[2] = powf(w3, g_exp);
+            float wSum = W[0] + W[1] + W[2];
+            if (wSum > 0.0f) { W[0] /= wSum; W[1] /= wSum; W[2] /= wSum; }
+            for (int i = 0; i < numChans; i++)
+                out[i] = W[0] * s[0][i] + W[1] * s[1][i] + W[2] * s[2][i];
+        }
+
+        for (int i = 0; i < numChans; i++) {
+            row.writable(chanList[i])[px] = out[i];
+        }
+    }
+}
+
+
+void HexTileNormal::knobs(Knob_Callback f)
+{
+    Float_knob(f, &_tileScale, "tile_scale", "tile scale");
+    SetRange(f, 0.1, 100);
+    Tooltip(f,
+        "How many times the input texture repeats across the output. "
+        "Higher values produce smaller hex tiles with more randomisation.");
+
+    Bool_knob(f, &_scaleOutput, "scale_output", "scale output");
+    Tooltip(f,
+        "Multiply the output resolution by tile_scale so each hex tile "
+        "retains the full input texture resolution. "
+        "OFF: output matches the project format (tiles shrink as tile_scale grows). "
+        "ON: output = format × tile_scale (each tile stays sharp).");
+
+    Float_knob(f, &_rotStrength, IRange(0.0, 1.0), "rot_strength", "rotation");
+    Tooltip(f,
+        "Random rotation applied to each hex tile. "
+        "0.0 = no rotation (good for directional patterns like bricks). "
+        "1.0 = full random rotation (good for organic textures).");
+
+    Bool_knob(f, &_directX, "directx", "directX");
+    Tooltip(f,
+        "Enable for DirectX-style normal maps (G = +Y down). "
+        "OFF: OpenGL convention (G = +Y up) — default. "
+        "ON: DirectX convention (G = +Y down).");
+
+    Divider(f, "");
+
+    _filter.knobs(f);
+
+    Divider(f, "");
+
+    Tab_knob(f, "About");
+    Text_knob(f, "version", VERSION);
+    Text_knob(f, "Copyright (c) 2026 kawata. All rights reserved.");
+}
+
+
+// ---------------------------------------------------------------------------
+// Registration
+// ---------------------------------------------------------------------------
+
+static Iop* buildNormal(Node* node) { return new HexTileNormal(node); }
+
+const Iop::Description HexTileNormal::d(CLASS_NORMAL, "Texture/HexTile_Normal", buildNormal);

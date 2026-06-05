@@ -91,11 +91,6 @@ function(add_nuke_plugin PLUGIN_NAME)
     target_link_libraries(${PLUGIN_NAME} PRIVATE Nuke::NDK)
     target_compile_features(${PLUGIN_NAME} PRIVATE cxx_std_17)
 
-    # MSVC strips static Description objects in Release — force them to be kept
-    if(MSVC)
-        target_link_options(${PLUGIN_NAME} PRIVATE /OPT:NOREF)
-    endif()
-
     # Nuke expects no "lib" prefix and platform-specific extension
     set_target_properties(${PLUGIN_NAME} PROPERTIES
         PREFIX ""

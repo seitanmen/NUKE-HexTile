@@ -21,3 +21,4 @@ error_dump/
 error/
 *.pur
 *.dmp
+.omc/

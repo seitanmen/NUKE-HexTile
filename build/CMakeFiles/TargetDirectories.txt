@@ -1,3 +1,0 @@
-C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/HexTile.dir
-C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/USERNAME/Downloads/work/hex_tile/build/CMakeFiles/ZERO_CHECK.dir

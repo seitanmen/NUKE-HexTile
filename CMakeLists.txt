@@ -16,9 +16,12 @@ find_package(Nuke REQUIRED)
 # Build the plugin
 add_nuke_plugin(HexTile HexTile.cpp)
 
-# Deploy to production after build
-set(DEPLOY_DIR "L:/Composite/nuke_plugins/VMT/texture")
-if(WIN32 AND EXISTS "${DEPLOY_DIR}")
+# Deploy to production after build (環境依存パスはコミットしない)
+#   有効化: 環境変数 VMT_NUKE_DEPLOY_DIR を設定、または -DDEPLOY_DIR=... を渡す
+if(NOT DEPLOY_DIR AND DEFINED ENV{VMT_NUKE_DEPLOY_DIR})
+    set(DEPLOY_DIR "$ENV{VMT_NUKE_DEPLOY_DIR}")
+endif()
+if(WIN32 AND DEPLOY_DIR AND EXISTS "${DEPLOY_DIR}")
     get_target_property(_ndk_inc Nuke::NDK INTERFACE_INCLUDE_DIRECTORIES)
     if(_ndk_inc MATCHES "Nuke16")
         set(_VER_DIR "16.0")

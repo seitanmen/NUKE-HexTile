@@ -8,8 +8,8 @@ Based on "Practical Real-Time Hex-Tiling" by Morten S. Mikkelsen (JCGT 2022). Th
 
 ## Features
 
-- **HexTile** (`vmt_HexTile`): Color/texture tiling with luminance-weighted blending + optional height blend
-- **HexTile_Normal** (`vmt_HexTile_Normal`): Normal map tiling with derivative-based blending (OpenGL/DirectX toggle)
+- **HexTile** (class `HexTile`): Color/texture tiling with luminance-weighted blending + optional height blend
+- **HexTile_Normal** (class `HexTile_Normal`): Normal map tiling with derivative-based blending (OpenGL/DirectX toggle)
 - **Height Blend**: Redshift OSL-style stochastic height blending with weight/delta controls
 - **Multi-version**: Nuke 15.1 and 16.0 support (separate builds)
 
@@ -53,20 +53,22 @@ if platform.system() == 'Windows':
 
 Create node in Node Graph or run:
 ```python
-nuke.createNode("HexTile")  # vmt_HexTile
-nuke.createNode("HexTile_Normal")  # vmt_HexTile_Normal
+nuke.createNode("HexTile")         # menu: Texture > HexTile
+nuke.createNode("HexTile_Normal")  # menu: Texture > HexTile_Normal
 ```
 
 ### Parameters (HexTile)
 
-| Knob | Description | Default |
-|------|-------------|---------|
-| `tileScale` | Hex grid density | 1.0 |
-| `rotStrength` | Rotation randomness | 0.5 |
-| `tile_blend` | Barycentric weight exponent | 0.5 |
-| `scale_output` | Scale output format | disabled |
-| `height_weight` | Height blend influence | 1.0 |
-| `height_delta` | Height transition width | 0.2 |
+| Knob (script name) | Label | Description | Default |
+|------|-------|-------------|---------|
+| `tile_scale` | tile scale | Hex grid density | 2.0 |
+| `rot_strength` | rotation | Rotation randomness (0-1) | 0.5 |
+| `tile_blend` | tile blend | Blend contrast (0.01-0.99) | 0.75 |
+| `scale_output` | scale output | Scale output format | off |
+| `height_weight` | height weight | Height blend influence (0-2) | 1.0 |
+| `height_delta` | height delta | Height transition width (0.01-1) | 0.2 |
+
+> `HexTile_Normal` shares `tile_scale`, `rot_strength`, `scale_output`, `height_weight`, `height_delta` (no `tile_blend`; adds a `normalConvention` OpenGL/DirectX toggle).
 
 ### Height Input (Optional)
 

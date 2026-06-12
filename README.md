@@ -8,8 +8,8 @@ Based on "Practical Real-Time Hex-Tiling" by Morten S. Mikkelsen (JCGT 2022). Th
 
 ## Features
 
-- **HexTile** (class `HexTile`): Color/texture tiling with luminance-weighted blending + optional height blend
-- **HexTile_Normal** (class `HexTile_Normal`): Normal map tiling with derivative-based blending (OpenGL/DirectX toggle)
+- **HexTile** (node `HexTile`): Color/texture tiling with luminance-weighted blending + optional height blend
+- **HexTile_Normal** (node `HexTile_Normal`, C++ class `HexTileNormal`): Normal map tiling with derivative-based blending (OpenGL/DirectX toggle)
 - **Height Blend**: Redshift OSL-style stochastic height blending with weight/delta controls
 - **Multi-version**: Nuke 15.1 and 16.0 support (separate builds)
 
@@ -29,25 +29,31 @@ cmake --build build151 --config Release
 
 ### Deployment
 
-Set `VMT_NUKE_DEPLOY_DIR` environment variable. Build auto-deploys to:
+Set the `VMT_NUKE_DEPLOY_DIR` environment variable (or pass `-DDEPLOY_DIR=...`). The
+build's POST_BUILD step copies the DLL into a per-version subfolder of that directory:
 ```
-<DEPLOY_DIR>/texture/16.0/HexTile.dll
-<DEPLOY_DIR>/texture/15.1/HexTile.dll
+<VMT_NUKE_DEPLOY_DIR>/16.0/HexTile.dll   # built against Nuke 16
+<VMT_NUKE_DEPLOY_DIR>/15.1/HexTile.dll   # built against Nuke 15
 ```
+(The version subfolder is chosen automatically from the NDK include path; only `15.1`
+and `16.0` are recognized.)
 
-Add to `init.py`:
+In a typical production tree the plugins live under a `texture/` folder with an `init.py`
+beside it that loads the right build per Nuke version:
 ```python
-import os
+import os, platform
 if platform.system() == 'Windows':
     ver = "{}.{}".format(nuke.NUKE_VERSION_MAJOR, nuke.NUKE_VERSION_MINOR)
     tex_dir = os.path.join(os.path.dirname(__file__), 'texture', ver)
-    if os.path.isdir(tex_dir):
+    if os.path.isdir(tex_dir):              # skip cleanly if this version isn't built
         nuke.pluginAddPath('./texture/' + ver)
         try:
             nuke.load('HexTile')
         except Exception:
             pass
 ```
+(Point `VMT_NUKE_DEPLOY_DIR` at that `texture/` folder so the build lands in
+`texture/16.0/` and `texture/15.1/`.)
 
 ## Usage
 
@@ -68,23 +74,29 @@ nuke.createNode("HexTile_Normal")  # menu: Texture > HexTile_Normal
 | `height_weight` | height weight | Height blend influence (0-2) | 1.0 |
 | `height_delta` | height delta | Height transition width (0.01-1) | 0.2 |
 
-> `HexTile_Normal` shares `tile_scale`, `rot_strength`, `scale_output`, `height_weight`, `height_delta` (no `tile_blend`; adds a `normalConvention` OpenGL/DirectX toggle).
+> `HexTile_Normal` shares `tile_scale`, `rot_strength`, `scale_output`, `height_weight`, `height_delta` (no `tile_blend`; adds a `directx` checkbox — off = OpenGL `+Y up`, on = DirectX `+Y down`). It blends via screen-space derivatives and re-normalizes, with no luminance diffusion.
 
 ### Height Input (Optional)
 
-Connect height map to input 1. Plugin automatically:
-- Enables height blend when connected
-- Falls back to luminance blend when disabled/disconnected
+Connect a height map to input 1. The plugin automatically:
+- Enables height blend when connected (`HexTile` only)
+- Falls back to its default blend when the input is disabled/disconnected
+  (luminance diffusion for `HexTile`, derivative blend for `HexTile_Normal`)
 - Handles resolution mismatches gracefully
 
 ## Algorithm Details
 
 - **TriangleGrid**: Pixel → 3 hex vertices with random offsets/rotations
-- **Hash**: `frac(sin(dot*big)*43758)` per-vertex randomness
-- **Sampling**: NDK Filter::Coefficients for separable 2D filtering
-- **Blending**: 
-  - No height: Barycentric weight^γ × luminance diffusion (Rec.601)
-  - With height: Soft threshold transition (Redshift OSL `soft_twin_threshold`)
+- **Hash**: `frac(sin(dot)*43758.5453)` per-vertex randomness
+- **Sampling**: NDK `Filter::Coefficients` for separable 2D filtering
+- **Blending**:
+  - No height: barycentric weight raised to a fixed exponent `g_exp = 7.0`, modulated by
+    luminance diffusion (Rec.601 weights, `g_falloff = 0.6`); the `tile_blend` knob then
+    applies a separate contrast gain to the blend
+  - With height: soft threshold transition (Redshift OSL `soft_twin_threshold`)
+
+Key constants: `g_exp = 7.0`, `g_falloff = 0.6`, `Lw = {0.299, 0.587, 0.114}` (Rec.601),
+TriangleGrid scale `2√3`.
 
 ## Requirements
 

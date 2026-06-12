@@ -97,18 +97,27 @@ Connect height map to input 1. Plugin automatically:
 
 MPL-2.0 (Mozilla Public License 2.0) - See [LICENSE](LICENSE)
 
-## Citation
+## References
 
-This implementation is based on:
+This implementation is based directly on Mikkelsen's hex-tiling method, which is itself an
+adaptation of the earlier by-example tiling-and-blending work by Heitz, Neyret and Deliot.
 
-```
-Morten S. Mikkelsen, "Practical Real-Time Hex-Tiling",
-Journal of Computer Graphics Techniques, vol. 11, no. 2, pp. 77-94, 2022.
-```
+1. Morten S. Mikkelsen. "Practical Real-Time Hex-Tiling." *Journal of Computer Graphics
+   Techniques (JCGT)*, vol. 11, no. 2, pp. 77–94, 2022.
+   https://jcgt.org/published/0011/03/05/ — reference implementation:
+   https://github.com/mmikk/hextile-demo (MIT License)
 
-Paper: https://jcgt.org/published/0011/03/05/
+2. Eric Heitz and Fabrice Neyret. "High-Performance By-Example Noise using a
+   Histogram-Preserving Blending Operator." *Proceedings of the ACM on Computer Graphics and
+   Interactive Techniques (ACM SIGGRAPH / Eurographics High-Performance Graphics)*, vol. 1,
+   no. 2, art. 31, pp. 1–25, 2018. doi:10.1145/3233304
 
-Reference implementation: https://github.com/mmikk/hextile-demo (MIT License)
+3. Thomas Deliot and Eric Heitz. "Procedural Stochastic Textures by Tiling and Blending."
+   In *GPU Zen 2*, Wolfgang Engel (ed.), Black Cat Publishing, 2019.
+
+4. Brent Burley. "On Histogram-Preserving Blending for Randomized Texture Tiling."
+   *Journal of Computer Graphics Techniques (JCGT)*, vol. 8, no. 4, pp. 31–53, 2019.
+   https://jcgt.org/published/0008/04/02/
 
 ## Author
 
